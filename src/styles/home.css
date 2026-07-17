@@ -11,6 +11,7 @@
 }
 
 .hero{
+    position: relative;
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -192,4 +193,66 @@
 
     width:30px;
     height:30px;
+}
+
+.back-button{
+
+    position:absolute;
+
+    top:-20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:4px;
+
+    padding:5px 20px;
+
+    background:none;
+
+    border:1px solid rgba(0,0,0,.15);
+
+    border-radius:35px;
+
+    cursor:pointer;
+
+    color:#181818;
+
+    transition:opacity .3s ease;
+}
+
+.back-button span{
+
+    font-family:"Playfair Display", serif;
+    font-weight: 500;
+    font-size:1.5rem;
+
+    letter-spacing:12px;
+
+    font-weight:300;
+}
+
+.back-icon{
+
+    transition:transform .3s ease;
+}
+
+.back-button:hover{
+
+    opacity:.7;
+}
+
+.back-button:hover .back-icon{
+
+    transform:translateX(-6px);
 }

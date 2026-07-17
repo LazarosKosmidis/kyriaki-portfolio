@@ -1,58 +1,30 @@
 import "../styles/home.css";
 import { useRef } from "react";
 import { gsap } from "gsap";
+import { ArrowUUpLeft } from "@phosphor-icons/react";
+
 import SoundButton from "../components/SoundButton";
 
 function Home() {
 
+    // References to HTML components to animate with GSAP
     const portfolioRef = useRef(null);
     const infoRef = useRef(null);
     const menuRef = useRef(null);
+    const backRef = useRef(null);
     const soundRef = useRef(null);
-    
-    const handleOpen = () => {
-        soundRef.current?.playAudio();
-        const tl = gsap.timeline();
-        
-        tl.to(portfolioRef.current, {
 
-            opacity: 0,
+    // GSAP timeline reference
+    const timelineRef = useRef(null);
 
-            duration: 0.5,
+    // Back button hover animation
+    const handleBackHover = () => {
 
-            ease: "power2.out"
+        gsap.to(backRef.current, {
 
-        })
+            y: -10,
 
-        .to(infoRef.current, {
-
-            y: -150,
-
-            duration: 1.3,
-
-            ease: "power3.inOut"
-
-        })
-
-        .to(menuRef.current, {
-
-            opacity: 1,
-
-            duration: 0.4,
-
-            pointerEvents: "auto"
-
-        }, "-=0.3")
-
-        .from(menuRef.current.children, {
-
-            opacity: 0,
-
-            y: 20,
-
-            stagger: 0.1,
-
-            duration: 0.5,
+            duration: 0.15,
 
             ease: "power2.out"
 
@@ -60,8 +32,126 @@ function Home() {
 
     };
 
+    const handleBackLeave = () => {
+
+        gsap.to(backRef.current, {
+
+            y: 0,
+
+            duration: 0.15,
+
+            ease: "power2.out"
+
+        });
+
+    };
+
+    // Open menu
+    const handleOpen = () => {
+
+        // Start music
+        soundRef.current?.playAudio();
+
+        if (!timelineRef.current) {
+
+            timelineRef.current = gsap.timeline({ paused: true });
+
+            timelineRef.current
+
+                // Hide Welcome button
+                .to(portfolioRef.current, {
+
+                    opacity: 0,
+
+                    duration: 0.5,
+
+                    ease: "power2.out"
+
+                })
+
+                // Move name upwards
+                .to(infoRef.current, {
+
+                    y: -150,
+
+                    duration: 1.3,
+
+                    ease: "power3.inOut"
+
+                })
+
+                // Show Back button
+                .to(backRef.current, {
+
+                    opacity: 1,
+
+                    duration: 0.4,
+
+                    onStart: () => {
+
+                        backRef.current.style.pointerEvents = "auto";
+
+                    },
+
+                    onReverseComplete: () => {
+
+                        backRef.current.style.pointerEvents = "none";
+
+                    }
+
+                }, "-=0.3")
+
+                // Show menu
+                .to(menuRef.current, {
+
+                    opacity: 1,
+
+                    duration: 0.4,
+
+                    onStart: () => {
+
+                        menuRef.current.style.pointerEvents = "auto";
+
+                    },
+
+                    onReverseComplete: () => {
+
+                        menuRef.current.style.pointerEvents = "none";
+
+                    }
+
+                }, "<")
+
+                // Animate menu items one by one
+                .from(menuRef.current.children, {
+
+                    opacity: 0,
+
+                    y: 20,
+
+                    stagger: 0.1,
+
+                    duration: 0.5,
+
+                    ease: "power2.out"
+
+                });
+
+        }
+
+        timelineRef.current.play();
+
+    };
+
+    // Reverse animation
+    const handleBack = () => {
+
+        timelineRef.current?.reverse();
+
+    };
+
     return (
-        
+
         <main className="home">
 
             <div className="hero">
@@ -78,6 +168,22 @@ function Home() {
 
                 </div>
 
+                <button
+                    ref={backRef}
+                    className="back-button"
+                    onClick={handleBack}
+                    onMouseEnter={handleBackHover}
+                    onMouseLeave={handleBackLeave}
+                >
+                    <ArrowUUpLeft
+                        size={42}
+                        weight="thin"
+                    />
+
+                    <span>BACK</span>
+
+                </button>
+
                 <h1
                     ref={portfolioRef}
                     className="portfolio portfolio-box"
@@ -90,8 +196,6 @@ function Home() {
                     className="menu"
                     ref={menuRef}
                 >
-
-                    <div className="divider"></div>
 
                     <button>ABOUT ME</button>
 
@@ -114,7 +218,9 @@ function Home() {
             <p className="quote">
                 BUILDING RELIABLE DATA, DESIGNING SCALABLE SOLUTIONS.
             </p>
-            <SoundButton ref={soundRef}/>
+
+            {/* <SoundButton ref={soundRef} /> */}
+
         </main>
 
     );
