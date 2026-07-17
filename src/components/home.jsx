@@ -8,11 +8,12 @@ function Home() {
     const portfolioRef = useRef(null);
     const infoRef = useRef(null);
     const menuRef = useRef(null);
-
+    const soundRef = useRef(null);
+    
     const handleOpen = () => {
-
+        soundRef.current?.playAudio();
         const tl = gsap.timeline();
-
+        
         tl.to(portfolioRef.current, {
 
             opacity: 0,
@@ -113,7 +114,7 @@ function Home() {
             <p className="quote">
                 BUILDING RELIABLE DATA, DESIGNING SCALABLE SOLUTIONS.
             </p>
-            <SoundButton />
+            <SoundButton ref={soundRef}/>
         </main>
 
     );
