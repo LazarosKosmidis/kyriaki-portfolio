@@ -72,34 +72,15 @@ function Home() {
                 // Move name upwards
                 .to(infoRef.current, {
 
-                    y: -150,
+                    y: -160,
 
-                    duration: 1.3,
+                    duration: 1.4,
 
                     ease: "power3.inOut"
 
                 })
 
-                // Show Back button
-                .to(backRef.current, {
-
-                    opacity: 1,
-
-                    duration: 0.4,
-
-                    onStart: () => {
-
-                        backRef.current.style.pointerEvents = "auto";
-
-                    },
-
-                    onReverseComplete: () => {
-
-                        backRef.current.style.pointerEvents = "none";
-
-                    }
-
-                }, "-=0.3")
+                
 
                 // Show menu
                 .to(menuRef.current, {
@@ -135,7 +116,29 @@ function Home() {
 
                     ease: "power2.out"
 
-                });
+                })
+                // Show Back button
+                .to(backRef.current, {
+
+                    opacity: 1,
+
+                    duration: 0.4,
+
+                    onStart: () => {
+
+                        backRef.current.style.pointerEvents = "auto";
+
+                    },
+
+                    onReverseComplete: () => {
+
+                        backRef.current.style.pointerEvents = "none";
+
+                    }
+
+                }, "-=0.3");
+
+                
 
         }
 
