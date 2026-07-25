@@ -155,44 +155,64 @@ function Home() {
 
     return (
 
-        <main className="home">
+    <main className="home">
+        <header className="topbar">
 
-            <div className="hero">
+            <div className="topbar-left">
+
+            </div>
+
+        </header>
+
+        <div className="sidebar">
+
+                <div className="sidebar-label">
+                    DATA ENGINEER
+                </div>
+
+                <div className="sidebar-number">
+                    01
+                </div>
+
+        </div>
+        
+        <div className="hero">
+            
+
+            <div className="hero-content">
 
                 <div ref={infoRef}>
 
-                    <h2 className="fullname">
-                        Kyriaki Kalampouka
-                    </h2>
+                    <div className="name-wrapper">
 
-                    <p className="profession">
-                        DATA ENGINEER
-                    </p>
+                        <h1 className="firstname">
+                            Kyriaki
+                        </h1>
+
+                        <h2 className="lastname">
+                            Kalampouka
+                        </h2>
+
+                    </div>
+
+                    <div className="job-row">
+
+                        <div className="job-line"></div>
+
+                        <p className="profession">
+                            DATA ENGINEER
+                        </p>
+
+                    </div>
 
                 </div>
-
-                <button
-                    ref={backRef}
-                    className="back-button"
-                    onClick={handleBack}
-                    onMouseEnter={handleBackHover}
-                    onMouseLeave={handleBackLeave}
-                >
-                    <ArrowUUpLeft
-                        size={42}
-                        weight="thin"
-                    />
-
-                    <span>BACK</span>
-
-                </button>
 
                 <h1
                     ref={portfolioRef}
                     className="portfolio portfolio-box"
                     onClick={handleOpen}
                 >
-                    Welcome to My Portfolio
+                    ENTER PORTFOLIO ↗
                 </h1>
 
                 <div
@@ -218,15 +238,37 @@ function Home() {
 
             </div>
 
-            <p className="quote">
-                BUILDING RELIABLE DATA, DESIGNING SCALABLE SOLUTIONS.
-            </p>
+            <button
+                ref={backRef}
+                className="back-button"
+                onClick={handleBack}
+                onMouseEnter={handleBackHover}
+                onMouseLeave={handleBackLeave}
+            >
+                <ArrowUUpLeft
+                    size={34}
+                    weight="thin"
+                />
 
-            {/* <SoundButton ref={soundRef} /> */}
+                <span>BACK</span>
 
-        </main>
+            </button>
 
-    );
+        </div>
+
+        <div className="bottom-line"></div>
+
+        <p className="quote">
+            BUILDING RELIABLE DATA
+            <span className="quote-dot"> • </span>
+            DESIGNING SCALABLE SOLUTIONS
+        </p>
+
+        {/* <SoundButton ref={soundRef} /> */}
+
+    </main>
+
+);
 }
 
 export default Home;
