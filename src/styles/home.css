@@ -30,6 +30,7 @@
 
     align-items:flex-start;
 
+    position:relative;
 }
 .portfolio{
 
@@ -180,10 +181,11 @@
 
 .back-button{
 
-    position:absolute;
+     position:absolute;
 
-    top:320px;
     left:50%;
+
+    top:50px;
 
     transform:translateX(-50%);
 

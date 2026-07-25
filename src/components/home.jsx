@@ -206,6 +206,7 @@ function Home() {
                     </div>
 
                 </div>
+                
 
                 <h1
                     ref={portfolioRef}
@@ -235,24 +236,25 @@ function Home() {
                     <button>CONTACT INFO</button>
 
                 </div>
+                <button
+                    ref={backRef}
+                    className="back-button"
+                    onClick={handleBack}
+                    onMouseEnter={handleBackHover}
+                    onMouseLeave={handleBackLeave}
+                >
+                    <ArrowUUpLeft
+                        size={34}
+                        weight="thin"
+                    />
+
+                    <span>BACK</span>
+
+                </button>
 
             </div>
 
-            <button
-                ref={backRef}
-                className="back-button"
-                onClick={handleBack}
-                onMouseEnter={handleBackHover}
-                onMouseLeave={handleBackLeave}
-            >
-                <ArrowUUpLeft
-                    size={34}
-                    weight="thin"
-                />
-
-                <span>BACK</span>
-
-            </button>
+            
 
         </div>
 
