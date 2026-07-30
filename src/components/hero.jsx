@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ArrowUUpLeft } from "@phosphor-icons/react";
+import { ArrowLeft } from "@phosphor-icons/react";
 
 import SoundButton from "./SoundButton";
 
@@ -233,6 +234,33 @@ function Hero() {
         timelineRef.current?.reverse();
 
     };
+    const handleMenuHover = (e) => {
+
+        gsap.to(e.currentTarget, {
+
+            scale: 1.15,
+
+            duration: 0.25,
+
+            ease: "power2.out"
+
+        });
+
+    };
+
+    const handleMenuLeave = (e) => {
+
+        gsap.to(e.currentTarget, {
+
+            scale: 1,
+
+            duration: 0.25,
+
+            ease: "power2.out"
+
+        });
+
+    };
 
     return (
 
@@ -283,23 +311,44 @@ function Hero() {
                     ref={menuRef}
                 >
                      
-                            <button onClick={() => openSection("about")}>ABOUT ME</button>
+                            <button 
+                                onMouseEnter={handleMenuHover}
+                                onMouseLeave={handleMenuLeave}
+                                onClick={() => openSection("about")}>ABOUT ME</button>
 
-                            <button onClick={() => openSection("skills")}>SKILLS</button>
+                            <button 
+                            onMouseEnter={handleMenuHover}
+                            onMouseLeave={handleMenuLeave}
+                            onClick={() => openSection("skills")}>SKILLS</button>
 
-                            <button onClick={() => openSection("experience")}>
+                            <button 
+                                onMouseEnter={handleMenuHover}
+                                onMouseLeave={handleMenuLeave}
+                                onClick={() => openSection("experience")}>
                                 WORK EXPERIENCE
                             </button>
 
-                            <button onClick={() => openSection("projects")}>PROJECTS</button>
+                            <button 
+                            onMouseEnter={handleMenuHover}
+                            onMouseLeave={handleMenuLeave}
+                            onClick={() => openSection("projects")}>PROJECTS</button>
 
-                            <button onClick={() => openSection("education")}>EDUCATION</button>
+                            <button 
+                            onMouseEnter={handleMenuHover}
+                            onMouseLeave={handleMenuLeave}
+                            onClick={() => openSection("education")}>EDUCATION</button>
 
-                            <button onClick={() => openSection("certifications")}>
+                            <button 
+                                onMouseEnter={handleMenuHover}
+                                onMouseLeave={handleMenuLeave}
+                                onClick={() => openSection("certifications")}>
                                 CERTIFICATIONS
                             </button>
 
-                            <button onClick={() => openSection("contact")}>
+                            <button 
+                                onMouseEnter={handleMenuHover}
+                                onMouseLeave={handleMenuLeave}
+                                onClick={() => openSection("contact")}>
                                 CONTACT INFO
                             </button>
                         
@@ -511,6 +560,90 @@ function Hero() {
                                         </div>
 
                                     )}
+                                    {activeSection === "education" && (
+
+                                        <div
+                                            ref={sectionRef}
+                                            className="section-content"
+                                        >
+                                            <div className="section-header">
+
+                                                <h2>EDUCATION</h2>
+
+                                                <div className="section-line"></div>
+
+                                            </div>
+
+                                            <div className="experience-list">
+
+                                                <div className="experience-item">
+
+                                                    <h3>
+                                                        BSc in Applied Informatics
+                                                    </h3>
+
+                                                    <p className="company">
+                                                        University of Macedonia, Thessaloniki, Greece
+                                                    </p>
+
+                                                    <p className="date">
+                                                        2016 – 2021
+                                                    </p>
+
+                                                </div>
+
+                                                <div className="experience-item">
+
+                                                    <h3>
+                                                        MSc in Data Science & Machine Learning
+                                                    </h3>
+
+                                                    <p className="company">
+                                                        Hellenic Open University (Remote)
+                                                    </p>
+
+                                                    <p className="date">
+                                                        2023 – Present
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    )}
+                                    {activeSection === "certifications" && (
+
+                                        <div
+                                            ref={sectionRef}
+                                            className="section-content"
+                                        >
+                                            <div className="section-header">
+
+                                                <h2>CERTIFICATIONS</h2>
+
+                                                <div className="section-line"></div>
+
+                                            </div>
+
+                                            <ul className="project-list">
+
+                                                <li>Microsoft Azure Data Engineer Associate</li>
+
+                                                <li>Microsoft Azure Data Fundamentals</li>
+
+                                                <li>Apache Spark Programming with Databricks</li>
+
+                                                <li>Just Enough Python for Apache Spark</li>
+
+                                                <li>Databricks Fundamentals</li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    )}
                             </div>
 
             </div>
@@ -523,13 +656,12 @@ function Hero() {
                     onMouseEnter={handleBackHover}
                     onMouseLeave={handleBackLeave}
                 >
-                    <ArrowUUpLeft
-                        size={34}
+                    <ArrowLeft
+                        size={22}
                         weight="thin"
                     />
 
                     <span>BACK</span>
-
                 </button>
 
             </div>

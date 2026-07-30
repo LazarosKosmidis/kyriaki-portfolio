@@ -87,20 +87,20 @@
 }
 
 .menu button{
-    font-family: Arial, sans-serif;
-    background:none;
+
     font-family: "Playfair Display", serif;
-    font-weight: 500;
+    background:none;
     border:none;
 
     cursor:pointer;
 
     font-size:1.2rem;
 
+    font-weight:500;
+
     letter-spacing:4px;
 
     color:#333;
-    
 }
 
 .portfolio-box{
@@ -182,11 +182,11 @@
 
 .back-button{
 
-     position:absolute;
+    position:absolute;
 
     left:50%;
 
-    top:50px;
+    top:70px;
 
     transform:translateX(-50%);
 
@@ -195,37 +195,31 @@
     pointer-events:none;
 
     display:flex;
-    flex-direction:column;
 
     align-items:center;
-    justify-content:center;
 
-    gap:6px;
-
-    padding:10px 18px;
+    gap:14px;
 
     background:none;
 
-    border:1px solid rgba(0,0,0,.15);
+    border:none;
 
-    border-radius:35px;
+    padding:0;
 
     cursor:pointer;
 
-    color:#181818;
-
-    transition:opacity .3s ease;
+    color:#2b2b2b;
 }
 
 .back-button span{
 
     font-family:"Playfair Display", serif;
-    font-weight: 600;
-    font-size:1.2rem;
 
-    letter-spacing:12px;
-    transform: translateX(5px);
-    font-weight:300;
+    font-size:1rem;
+
+    font-weight:400;
+
+    letter-spacing:6px;
 }
 
 .back-button:hover{
