@@ -13,3 +13,34 @@ About Me klp...osa fainontai stin photo
 
 Se kathe section na mporeis na patiseis.
 To periexomeno tou kathenos tha to vroume stin poreia
+
+Skills -> Databricks, Azure Platformas (Data Factory, Synapse Analytics)
+SQL, PySpark
+Work Experience -> 
+
+Data Engineering , Management & Governance Associate @ Accenture GR
+September 2022 -  June 2024
+
+Data Engineering , Management & Governance Analyst @ Accenture GR
+June 2024 - Present
+Projects -> 
+Cloud Data Platform Engineering Sept. 2022 - Sept. 2025
+Developed SQL/JSON ingestion processes and data transformations using Hive, Spark, and Oozie on
+HDFS.
+•    Orchestrated production workflows in Cloudera; delivered data into Azure Synapse Analytics.
+•    Migrated legacy workflows to Azure Data Factory and Databricks; built ADF pipelines and data flows.
+•    Supported data ingestion from MongoDB, Oracle, and SQL Server; optimized loading processes for analytics.
+
+Customer Analytics – SPSS to Databricks Optimization (Banking) Sept. 2025 - Present • Migrated and modernized legacy SPSS workflows into a Databricks-based cloud data platform.
+•    Reverse-engineered SPSS workflows to extract business logic, source dependencies, and transformation rules.
+•    Developed Silver layer data models using Spark SQL and PySpark KPI calculations within a Databricks feature catalog.
+•    Built Gold layer reporting datasets in Spark SQL for customer analytics and business reporting.
+•    Validated data consistency between legacy SPSS outputs and the new Databricks implementation.
+Education -> BsC in Applied Informatics, University of Macedonia, Thessaloniki GR.,    2016 - 2021
+MsC in Data Science & ML, Hellenic Open University, Remotely,    2023 - Present
+–––––––––––––––––––––––––––––––––    CERTIFICATIONS    –––––––––––––––––––––––––––
+•    Microsoft Azure Data Engineer Associate
+•    Microsoft Azure Data Fundamentals
+•    Apache Spark programming with Databricks
+•    Just enough Python for Apache Spark
+•    Databricks Fundamentals
