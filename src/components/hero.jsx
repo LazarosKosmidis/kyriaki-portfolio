@@ -666,7 +666,7 @@ function Hero() {
 
             </div>
 
-            {/* <SoundButton ref={soundRef} /> */}
+            <SoundButton ref={soundRef} />
 
             
         </div>
