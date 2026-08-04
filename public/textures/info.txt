@@ -14,7 +14,8 @@ About Me klp...osa fainontai stin photo
 Se kathe section na mporeis na patiseis.
 To periexomeno tou kathenos tha to vroume stin poreia
 
-Skills -> Databricks, Azure Platformas (Data Factory, Synapse Analytics)
+Skills -> 
+Databricks, Azure Platformas (Data Factory, Synapse Analytics)
 SQL, PySpark
 Work Experience -> 
 

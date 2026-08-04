@@ -56,12 +56,12 @@
     font-weight: 1000; */
     position:absolute;
 
-    bottom:20px;
+    top:10px;
 
     left:50%;
 
     transform:translateX(-50%);
-
+    margin:0;
     font-size:0.9rem;
 
     letter-spacing:4px;
@@ -192,8 +192,10 @@
 
     opacity:0;
 
-    pointer-events:none;
+    padding:16px 24px;
 
+    pointer-events:none;
+    border-radius:6px;
     display:flex;
 
     align-items:center;
@@ -204,7 +206,7 @@
 
     border:none;
 
-    padding:0;
+    
 
     cursor:pointer;
 
@@ -216,7 +218,7 @@
     font-family:"Playfair Display", serif;
 
     font-size:1rem;
-
+    
     font-weight:400;
 
     letter-spacing:6px;
@@ -224,7 +226,7 @@
 
 .back-button:hover{
 
-    opacity:.7;
+    opacity:.9;
 }
 
 .name-wrapper{
@@ -397,7 +399,6 @@
     position:absolute;
 
     left:0;
-
     right:0;
 
     bottom:45px;
@@ -405,7 +406,10 @@
     height:1px;
 
     background:rgba(0,0,0,.08);
-    
+
+    display:flex;
+
+    justify-content:center;
 }
 
 .section-container{

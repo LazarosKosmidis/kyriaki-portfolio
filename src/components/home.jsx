@@ -17,13 +17,15 @@ function Home() {
         <Sidebar />
         <Hero />
 
-        <div className="bottom-line"></div>
+        
 
+        <div className="bottom-line">
         <p className="quote">
             BUILDING RELIABLE DATA
             <span className="quote-dot"> • </span>
             DESIGNING SCALABLE SOLUTIONS
         </p>
+    </div>
 
     </main>
 
